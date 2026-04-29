@@ -9,6 +9,7 @@
       content="帕芙工坊 Pluffy Studio 的設計作品集，收錄品牌視覺、角色插畫、包裝、社群設計與客製委託服務。"
     >
     <link rel="stylesheet" href="styles.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -241,6 +242,19 @@
         <p>Copyright © 2026 Pluffy Studio. All rights reserved.</p>
       </footer>
     </main>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user && window.location.hash.includes("invite_token")) {
+            window.netlifyIdentity.open("signup");
+          }
+        });
+
+        window.netlifyIdentity.on("login", function () {
+          window.location.href = "/admin/";
+        });
+      }
+    </script>
     <script src="scripts/cms-content.js"></script>
   </body>
 </html>
