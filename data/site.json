@@ -1,0 +1,107 @@
+{
+  "settings": {
+    "brandName": "Pluffy Studio",
+    "lineLabel": "LINE：@902fkyxx",
+    "lineUrl": "#",
+    "instagramUrl": "#",
+    "threadsUrl": "#",
+    "email": "hello@pluffy-studio.com"
+  },
+  "works": [
+    {
+      "title": "帕芙工坊品牌識別",
+      "category": "Brand Identity",
+      "summary": "Logo、品牌色、角色輪廓與應用視覺，建立柔軟且可延伸的品牌印象。",
+      "image": "assets/pluffy-logo.jpg",
+      "url": "work-pluffy-brand.html",
+      "featured": true
+    },
+    {
+      "title": "社群視覺模板",
+      "category": "Visual System",
+      "summary": "貼文版型、活動公告、商品資訊圖與限時動態模板。",
+      "image": "",
+      "url": "work-social-template.html",
+      "featured": false
+    },
+    {
+      "title": "包裝與貼紙設計",
+      "category": "Packaging",
+      "summary": "適用於品牌出貨、禮盒、攤位小卡與手作商品標籤。",
+      "image": "",
+      "url": "work-print-package.html",
+      "featured": false
+    },
+    {
+      "title": "角色插畫委託",
+      "category": "Illustration",
+      "summary": "頭像、品牌角色、活動主視覺與客製插圖。",
+      "image": "",
+      "url": "work-illustration.html",
+      "featured": false
+    }
+  ],
+  "games": [
+    {
+      "label": "Game 01",
+      "title": "小遊戲作品 A",
+      "bannerImage": "",
+      "videoUrl": "",
+      "category": "Game / Character / UI",
+      "description": "這裡可以放遊戲玩法、世界觀、角色設定、使用工具與負責內容。影片區可放 YouTube、Vimeo 或本機影片嵌入。",
+      "type": "2D 小遊戲",
+      "role": "角色、畫面、UI、企劃",
+      "status": "Past project"
+    },
+    {
+      "label": "Game 02",
+      "title": "互動作品 B",
+      "bannerImage": "",
+      "videoUrl": "",
+      "category": "Interactive / Web / Prototype",
+      "description": "適合放互動網頁、角色操作、選單流程或課堂專案。可以補上作品背景、互動方式與畫面截圖。",
+      "type": "互動原型",
+      "role": "視覺設計、互動流程",
+      "status": "Archive"
+    },
+    {
+      "label": "Game 03",
+      "title": "遊戲原型 C",
+      "bannerImage": "",
+      "videoUrl": "",
+      "category": "Prototype / Visual Test",
+      "description": "可以放早期概念測試、場景練習或未完成原型。即使不是完整上線作品，也能保留畫面風格與思考過程。",
+      "type": "遊戲原型",
+      "role": "概念、視覺、介面",
+      "status": "Work in archive"
+    }
+  ],
+  "team": {
+    "title": "團隊介紹",
+    "logo": "assets/pluffy-logo.jpg",
+    "description": "這裡可以放當時的團隊名稱、Logo、成員分工與專案背景。也可以補充每個人在企劃、程式、美術、音效或剪輯上的負責內容。"
+  },
+  "videos": [
+    {
+      "title": "短影音剪輯 01",
+      "category": "Short Video",
+      "summary": "可放影片封面、平台連結、剪輯方向與使用素材說明。",
+      "coverImage": "",
+      "videoUrl": ""
+    },
+    {
+      "title": "活動紀錄剪輯 02",
+      "category": "Event",
+      "summary": "適合放活動紀錄、花絮、宣傳影片或社群 Reels 作品。",
+      "coverImage": "",
+      "videoUrl": ""
+    },
+    {
+      "title": "宣傳影片剪輯 03",
+      "category": "Promo",
+      "summary": "可以標註負責項目，例如剪輯、字幕、配樂、節奏設計。",
+      "coverImage": "",
+      "videoUrl": ""
+    }
+  ]
+}

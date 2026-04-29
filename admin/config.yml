@@ -1,0 +1,72 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+locale: "zh_Hant"
+
+collections:
+  - name: "site"
+    label: "網站內容"
+    files:
+      - name: "content"
+        label: "首頁 / 作品 / 遊戲 / 剪輯"
+        file: "data/site.json"
+        format: "json"
+        fields:
+          - label: "聯絡設定"
+            name: "settings"
+            widget: "object"
+            fields:
+              - { label: "品牌名稱", name: "brandName", widget: "string" }
+              - { label: "LINE 按鈕文字", name: "lineLabel", widget: "string" }
+              - { label: "LINE 連結", name: "lineUrl", widget: "string", required: false }
+              - { label: "Instagram 連結", name: "instagramUrl", widget: "string", required: false }
+              - { label: "Threads 連結", name: "threadsUrl", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+          - label: "主作品集"
+            name: "works"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "作品名稱", name: "title", widget: "string" }
+              - { label: "分類", name: "category", widget: "string" }
+              - { label: "簡介", name: "summary", widget: "text" }
+              - { label: "封面圖片", name: "image", widget: "image", required: false }
+              - { label: "作品頁連結", name: "url", widget: "string", required: false }
+              - { label: "是否為大卡", name: "featured", widget: "boolean", default: false, required: false }
+          - label: "遊戲作品"
+            name: "games"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "小標", name: "label", widget: "string", required: false }
+              - { label: "遊戲名稱", name: "title", widget: "string" }
+              - { label: "橫幅圖片", name: "bannerImage", widget: "image", required: false }
+              - { label: "影片連結", name: "videoUrl", widget: "string", required: false }
+              - { label: "分類", name: "category", widget: "string", required: false }
+              - { label: "介紹", name: "description", widget: "text" }
+              - { label: "類型", name: "type", widget: "string", required: false }
+              - { label: "負責", name: "role", widget: "string", required: false }
+              - { label: "狀態", name: "status", widget: "string", required: false }
+          - label: "團隊介紹"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "標題", name: "title", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - { label: "介紹", name: "description", widget: "text" }
+          - label: "剪輯作品"
+            name: "videos"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "作品名稱", name: "title", widget: "string" }
+              - { label: "分類", name: "category", widget: "string", required: false }
+              - { label: "簡介", name: "summary", widget: "text" }
+              - { label: "封面圖片", name: "coverImage", widget: "image", required: false }
+              - { label: "影片連結", name: "videoUrl", widget: "string", required: false }
