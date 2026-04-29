@@ -244,14 +244,21 @@
     </main>
     <script>
       if (window.netlifyIdentity) {
+        var identityHash = window.location.hash || "";
+        var isIdentityFlow = identityHash.includes("invite_token");
+
         window.netlifyIdentity.on("init", function (user) {
-          if (!user && window.location.hash.includes("invite_token")) {
+          if (!user && isIdentityFlow) {
             window.netlifyIdentity.open("signup");
           }
         });
 
         window.netlifyIdentity.on("login", function () {
-          window.location.href = "/admin/";
+          if (isIdentityFlow) {
+            window.location.href = "/admin/";
+          } else {
+            window.netlifyIdentity.close();
+          }
         });
       }
     </script>
