@@ -3,78 +3,94 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>影片剪輯作品 | Pluffy Studio</title>
-    <meta
-      name="description"
-      content="帕芙工坊 Pluffy Studio 的影片剪輯作品 archive，收錄過去剪輯過的短影音、活動紀錄與宣傳影片。"
-    >
+    <title>影片剪輯作品 | 帕芙工坊 Pluffy Studio</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand-mark" href="index.html#top" aria-label="回到帕芙工坊首頁">
-        <img src="assets/pluffy-logo.jpg" alt="帕芙工坊 Pluffy Studio Logo">
-        <span>Pluffy Studio</span>
+        <img src="assets/pluffy-logo-clean.png" alt="帕芙工坊純 LOGO">
       </a>
-      <nav class="site-nav" aria-label="主要導覽">
+      <nav class="site-nav" aria-label="主選單">
         <a href="index.html#about">關於</a>
-        <a href="index.html#work">作品</a>
-        <a href="playground.html">遊戲</a>
-        <a href="video.html">剪輯</a>
-        <a href="pricing.html">價目</a>
-        <a href="index.html#contact">聯絡</a>
+        <a href="index.html#work">作品集</a>
+        <a href="index.html#pricing">服務項目</a>
+        <a href="pricing.html">價目表</a>
+        <a href="index.html#contact">合作委託</a>
       </nav>
     </header>
 
     <main>
-      <section class="project-hero section-band">
+      <section class="project-hero">
         <div>
-          <a class="back-link" href="index.html#video">回首頁</a>
-          <p class="eyebrow">Video archive</p>
+          <a class="back-link" href="index.html#work">回到作品集</a>
+          <p class="eyebrow">VIDEO ARCHIVE</p>
           <h1>影片剪輯作品</h1>
-          <p>
-            這裡收錄過去剪輯過的影片與影像作品。之後可以放影片封面、作品連結、製作年份與負責內容。
-          </p>
+          <p>過去剪輯過的影片與影像素材整理，可放短影音、活動紀錄、宣傳影片或練習作品。</p>
         </div>
-        <div class="project-cover video-cover" aria-hidden="true">
-          <span></span>
-          <b></b>
+        <div class="video-preview" aria-hidden="true">
+          <span></span><span></span><b></b>
         </div>
       </section>
 
-      <section class="section-wrap">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Past edits</p>
-          <h2>Archive</h2>
-        </div>
+      <section class="project-gallery">
+        <p class="eyebrow">GALLERY</p>
+        <h2>可放置影片</h2>
         <div class="video-grid" data-cms-videos>
           <article class="video-card">
-            <div class="video-thumb" aria-hidden="true"><span></span></div>
+            <div class="video-thumb"><span></span></div>
             <div>
-              <span class="tag">Short Video</span>
-              <h3>短影音剪輯 01</h3>
-              <p>可放影片封面、平台連結、剪輯方向與使用素材說明。</p>
+              <p class="eyebrow">SHORT VIDEO</p>
+              <h3>短影音剪輯</h3>
+              <p>用於社群短影音、Reels 或活動亮點整理。</p>
             </div>
           </article>
           <article class="video-card">
-            <div class="video-thumb alt" aria-hidden="true"><span></span></div>
+            <div class="video-thumb alt"><span></span></div>
             <div>
-              <span class="tag">Event</span>
-              <h3>活動紀錄剪輯 02</h3>
-              <p>適合放活動紀錄、花絮、宣傳影片或社群 Reels 作品。</p>
+              <p class="eyebrow">EVENT</p>
+              <h3>活動紀錄剪輯</h3>
+              <p>整理活動現場、花絮與紀錄片段。</p>
             </div>
           </article>
           <article class="video-card">
-            <div class="video-thumb soft" aria-hidden="true"><span></span></div>
+            <div class="video-thumb soft"><span></span></div>
             <div>
-              <span class="tag">Promo</span>
-              <h3>宣傳影片剪輯 03</h3>
-              <p>可以標註負責項目，例如剪輯、字幕、配樂、節奏設計。</p>
+              <p class="eyebrow">PROMO</p>
+              <h3>宣傳影片剪輯</h3>
+              <p>用於品牌介紹、商品宣傳與節奏編排。</p>
             </div>
           </article>
         </div>
       </section>
+
+      <section class="contact-section compact-cta">
+        <div>
+          <p class="eyebrow">CONTACT</p>
+          <h2>想整理影片作品嗎？</h2>
+          <p class="contact-copy">加 LINE 討論最快。</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary line-button" href="index.html#contact">直接加 LINE →</a>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-main">
+          <div class="footer-brand-text"><strong>帕芙工坊</strong><span>Pluffy Studio</span></div>
+          <p>柔軟、清楚、帶有記憶點的品牌視覺設計。</p>
+        </div>
+        <div class="footer-side">
+          <div class="footer-links">
+            <a href="#" data-cms-instagram><span>Instagram</span></a>
+            <a href="#" data-cms-threads><span>Threads</span></a>
+            <a href="mailto:hello@pluffy-studio.com" data-cms-email><span>Email</span></a>
+          </div>
+          <p class="copyright">Copyright © 2026 Pluffy Studio. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
+
     <script src="scripts/cms-content.js"></script>
   </body>
 </html>

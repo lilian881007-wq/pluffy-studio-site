@@ -1,14 +1,13 @@
-(function () {
+(() => {
   const dataUrl = "data/site.json";
 
   const escapeHtml = (value) =>
-    String(value || "")
+    String(value ?? "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-
-  const isPlayableUrl = (url) => /youtube\.com|youtu\.be|vimeo\.com/i.test(url || "");
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
 
   const youtubeEmbed = (url) => {
     const value = String(url || "");
@@ -24,24 +23,41 @@
     return match ? `https://player.vimeo.com/video/${match[1]}` : "";
   };
 
-  const embedUrl = (url) => youtubeEmbed(url) || vimeoEmbed(url);
+  const playableUrl = (url) => youtubeEmbed(url) || vimeoEmbed(url);
+  const isPlayableUrl = (url) => Boolean(playableUrl(url));
 
-  const renderVideoFrame = (url, label) => {
-    const src = embedUrl(url);
-    if (!src) return '<span></span>';
-    return `<iframe src="${escapeHtml(src)}" title="${escapeHtml(label)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  const renderVideoFrame = (url, title) => {
+    const src = playableUrl(url);
+    if (!src) return "";
+    return `<iframe src="${escapeHtml(src)}" title="${escapeHtml(title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
   };
 
   const renderWorkMedia = (work) => {
     if (work.image) {
-      return `<div class="work-media cms-image-media"><img src="${escapeHtml(work.image)}" alt="${escapeHtml(work.title)}"></div>`;
+      const imageClass = work.imageClass ? ` ${escapeHtml(work.imageClass)}` : "";
+      return `<div class="work-media cms-image-media${imageClass}"><img src="${escapeHtml(work.image)}" alt="${escapeHtml(work.title)}"></div>`;
     }
-    if (/social|visual|template/i.test(work.category || "")) {
-      return '<div class="work-media color-study"><span></span><span></span><span></span></div>';
+
+    if (work.mockupClass) {
+      const className = escapeHtml(work.mockupClass);
+      const extra = className.includes("color-study")
+        ? "<span></span><span></span><span></span>"
+        : className.includes("package-study")
+          ? "<div></div><div></div>"
+          : className.includes("signage-study")
+            ? "<span></span><b></b><i></i>"
+            : className.includes("illustration-study")
+              ? "<b></b><i></i>"
+              : className.includes("product-study")
+                ? "<span></span><b></b><i></i>"
+                : className.includes("video-study")
+                  ? "<span></span><b></b>"
+                  : className.includes("interactive-study")
+                    ? "<span></span><b></b><i></i>"
+                    : "";
+      return `<div class="work-media ${className}">${extra}</div>`;
     }
-    if (/pack|print/i.test(work.category || "")) {
-      return '<div class="work-media package-study"><div></div><div></div></div>';
-    }
+
     return '<div class="work-media illustration-study"><b></b><i></i></div>';
   };
 
@@ -70,10 +86,10 @@
   const renderSettings = (settings) => {
     if (!settings) return;
     const line = document.querySelector("[data-cms-line]");
-    if (line) {
-      line.textContent = settings.lineLabel || "加入官方 LINE";
-      line.href = settings.lineUrl || "#";
-    }
+    if (line) line.href = settings.lineUrl || "#";
+
+    const lineId = document.querySelector(".contact-line-id");
+    if (lineId && settings.lineLabel) lineId.textContent = settings.lineLabel;
 
     const instagram = document.querySelector("[data-cms-instagram]");
     if (instagram) instagram.href = settings.instagramUrl || "#";
@@ -82,9 +98,7 @@
     if (threads) threads.href = settings.threadsUrl || "#";
 
     const email = document.querySelector("[data-cms-email]");
-    if (email && settings.email) {
-      email.href = `mailto:${settings.email}`;
-    }
+    if (email && settings.email) email.href = `mailto:${settings.email}`;
   };
 
   const renderGames = (games, team) => {
@@ -93,7 +107,9 @@
     root.innerHTML = games
       .map((game, index) => {
         const reverse = index % 2 === 1 ? " reverse" : "";
-        const bannerStyle = game.bannerImage ? ` style="background-image: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.16)), url('${escapeHtml(game.bannerImage)}')"` : "";
+        const bannerStyle = game.bannerImage
+          ? ` style="background-image: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.16)), url('${escapeHtml(game.bannerImage)}')"`
+          : "";
         return `
           <article class="game-entry">
             <div class="game-banner game-banner-${index + 1}"${bannerStyle}>
@@ -103,7 +119,7 @@
               </div>
             </div>
             <div class="game-detail section-wrap${reverse}">
-              <div class="game-video" aria-label="${escapeHtml(game.title)} 影片位置">
+              <div class="game-video" aria-label="${escapeHtml(game.title)} 影片預覽">
                 ${renderVideoFrame(game.videoUrl, game.title)}
               </div>
               <div class="game-description">
@@ -135,8 +151,12 @@
     if (!root || !Array.isArray(videos) || videos.length === 0) return;
     root.innerHTML = videos
       .map((video, index) => {
-        const image = video.coverImage ? ` style="background-image: linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,.18)), url('${escapeHtml(video.coverImage)}')"` : "";
-        const link = video.videoUrl && !isPlayableUrl(video.videoUrl) ? `<a class="button secondary mini-cta" href="${escapeHtml(video.videoUrl)}">查看影片</a>` : "";
+        const image = video.coverImage
+          ? ` style="background-image: linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,.18)), url('${escapeHtml(video.coverImage)}')"`
+          : "";
+        const link = video.videoUrl && !isPlayableUrl(video.videoUrl)
+          ? `<a class="button secondary mini-cta" href="${escapeHtml(video.videoUrl)}">查看影片</a>`
+          : "";
         return `
           <article class="video-card">
             <div class="video-thumb ${index === 1 ? "alt" : index === 2 ? "soft" : ""}"${image}>${renderVideoFrame(video.videoUrl, video.title)}<span></span></div>
@@ -153,17 +173,13 @@
   };
 
   fetch(dataUrl)
-    .then((response) => {
-      if (!response.ok) throw new Error("No CMS data");
-      return response.json();
-    })
+    .then((response) => (response.ok ? response.json() : null))
     .then((data) => {
+      if (!data) return;
       renderSettings(data.settings);
       renderWorks(data.works);
       renderGames(data.games, data.team);
       renderVideos(data.videos);
     })
-    .catch(() => {
-      document.documentElement.classList.add("cms-fallback");
-    });
+    .catch(() => {});
 })();

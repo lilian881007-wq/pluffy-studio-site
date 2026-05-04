@@ -1,4 +1,4 @@
-{
+﻿{
   "settings": {
     "brandName": "Pluffy Studio",
     "lineLabel": "LINE：@902fkyxx",
@@ -12,7 +12,7 @@
       "title": "帕芙工坊品牌識別",
       "category": "Brand Identity",
       "summary": "Logo、品牌色、角色輪廓與應用視覺，建立柔軟且可延伸的品牌印象。",
-      "image": "assets/pluffy-logo.jpg",
+      "image": "assets/pluffy-logo-horizontal.png",
       "url": "work-pluffy-brand.html",
       "featured": true
     },
@@ -33,11 +33,43 @@
       "featured": false
     },
     {
+      "title": "店面廣告設計",
+      "category": "Store Advertising",
+      "summary": "招牌、帆布、燈箱、立牌與店面宣傳物，協助品牌在實體空間被清楚看見。",
+      "image": "",
+      "url": "work-store-signage.html",
+      "featured": false
+    },
+    {
       "title": "角色插畫委託",
       "category": "Illustration",
       "summary": "頭像、品牌角色、活動主視覺與客製插圖。",
       "image": "",
       "url": "work-illustration.html",
+      "featured": false
+    },
+    {
+      "title": "品牌周邊設計與商品呈現",
+      "category": "Product Presentation",
+      "summary": "從商品設計、視覺風格到拍攝與上架，整理出一套可直接使用的品牌內容。",
+      "image": "",
+      "url": "index.html#contact",
+      "featured": false
+    },
+    {
+      "title": "影片剪輯作品",
+      "category": "Editing",
+      "summary": "短影音、活動紀錄與宣傳影片整理，作為品牌內容的延伸呈現。",
+      "image": "",
+      "url": "video.html",
+      "featured": false
+    },
+    {
+      "title": "遊戲與互動作品",
+      "category": "Interactive",
+      "summary": "保留過去的小遊戲與互動練習，看見角色、介面與體驗節奏。",
+      "image": "",
+      "url": "playground.html",
       "featured": false
     }
   ],
@@ -78,7 +110,7 @@
   ],
   "team": {
     "title": "團隊介紹",
-    "logo": "assets/pluffy-logo.jpg",
+    "logo": "assets/pluffy-logo-icon.png",
     "description": "這裡可以放當時的團隊名稱、Logo、成員分工與專案背景。也可以補充每個人在企劃、程式、美術、音效或剪輯上的負責內容。"
   },
   "videos": [
