@@ -48,6 +48,7 @@
 
   let items = [];
   let isPortfolio = false;
+  let layout = "";
   let imageCount = 0;
   let mockupCount = 0;
 
@@ -82,7 +83,7 @@
   const render = () => {
     const visibleItems = isPortfolio ? items : items.slice(0, 5);
     collage.className = isPortfolio
-      ? "lightbox-collage portfolio-gallery"
+      ? `lightbox-collage portfolio-gallery${layout ? ` ${layout}` : ""}`
       : `lightbox-collage collage-${Math.min(visibleItems.length, 5)}`;
     collage.innerHTML = visibleItems
       .map((item, index) => {
@@ -132,7 +133,8 @@
       imageCount = imageItems.length;
       mockupCount = mockupItems.length;
 
-      isPortfolio = trigger.classList.contains("work-set-preview") || trigger.dataset.lightboxMode === "portfolio";
+      isPortfolio = trigger.classList.contains("work-set-preview") || trigger.classList.contains("image-preview-button") || trigger.dataset.lightboxMode === "portfolio";
+      layout = trigger.dataset.lightboxLayout ? `layout-${trigger.dataset.lightboxLayout}` : "";
       overlay.classList.toggle("is-portfolio", isPortfolio);
 
       accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "作品預覽") : "Pluffy Studio";
