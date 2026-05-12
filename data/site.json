@@ -20,7 +20,7 @@
       "title": "社群視覺模板",
       "category": "Visual System",
       "summary": "貼文版型、活動公告、商品資訊圖與限時動態模板。",
-      "image": "",
+      "image": "assets/pluffy-logo-character-bg.jpg",
       "url": "work-social-template.html",
       "featured": false
     },
@@ -28,7 +28,7 @@
       "title": "包裝與貼紙設計",
       "category": "Packaging",
       "summary": "適用於品牌出貨、禮盒、攤位小卡與手作商品標籤。",
-      "image": "",
+      "image": "assets/deploy/asset-024.png",
       "url": "work-print-package.html",
       "featured": false
     },
@@ -36,7 +36,7 @@
       "title": "店面廣告設計",
       "category": "Store Advertising",
       "summary": "招牌、帆布、燈箱、立牌與店面宣傳物，協助品牌在實體空間被清楚看見。",
-      "image": "",
+      "image": "assets/deploy/asset-030.jpg",
       "url": "work-store-signage.html",
       "featured": false
     },
@@ -44,7 +44,7 @@
       "title": "角色插畫委託",
       "category": "Illustration",
       "summary": "頭像、品牌角色、活動主視覺與客製插圖。",
-      "image": "",
+      "image": "assets/deploy/asset-013.png",
       "url": "work-illustration.html",
       "featured": false
     },
@@ -52,15 +52,23 @@
       "title": "品牌周邊設計與商品呈現",
       "category": "Product Presentation",
       "summary": "從商品設計、視覺風格到拍攝與上架，整理出一套可直接使用的品牌內容。",
-      "image": "",
-      "url": "index.html#contact",
+      "image": "assets/pricing-hero-photo-mockup-small.jpg",
+      "url": "photography.html",
+      "featured": false
+    },
+    {
+      "title": "3D 與渲染作品",
+      "category": "3D Render",
+      "summary": "產品建模、材質設定、場景光影與品牌視覺模擬。",
+      "image": "assets/deploy/asset-035.png",
+      "url": "work-3d-render.html",
       "featured": false
     },
     {
       "title": "影片剪輯作品",
       "category": "Editing",
       "summary": "短影音、活動紀錄與宣傳影片整理，作為品牌內容的延伸呈現。",
-      "image": "",
+      "image": "https://img.youtube.com/vi/KuWLJl3KfGA/hqdefault.jpg",
       "url": "video.html",
       "featured": false
     },
@@ -68,7 +76,7 @@
       "title": "遊戲與互動作品",
       "category": "Interactive",
       "summary": "保留過去的小遊戲與互動練習，看見角色、介面與體驗節奏。",
-      "image": "",
+      "image": "assets/deploy/asset-001.jpg",
       "url": "playground.html",
       "featured": false
     }
