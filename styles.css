@@ -172,7 +172,7 @@ main > section + section::before {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.9) 18%, rgba(255, 250, 244, 0.42) 39%, rgba(255, 250, 244, 0.08) 57%, rgba(255, 250, 244, 0) 72%),
-    url("assets/hero-pluffy-photo-mockup.png") 34% 46% / 128% auto no-repeat;
+    url("assets/hero-pluffy-photo-mockup-small.jpg") 34% 46% / 128% auto no-repeat;
 }
 
 .hero::before {
@@ -2330,7 +2330,7 @@ main > section + section::before {
   min-height: 0;
   background:
     linear-gradient(90deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.9) 22%, rgba(255, 250, 244, 0.42) 43%, rgba(255, 250, 244, 0.08) 62%, rgba(255, 250, 244, 0) 78%),
-    url("assets/pricing-hero-photo-mockup.png") 62% center / cover no-repeat;
+    url("assets/pricing-hero-photo-mockup-small.jpg") 62% center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -4405,7 +4405,7 @@ main > section + section::before {
     min-height: auto;
     background:
       linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(255, 250, 244, 0.82)),
-      url("assets/hero-pluffy-photo-mockup.png") 42% center / 152% auto no-repeat;
+      url("assets/hero-pluffy-photo-mockup-small.jpg") 42% center / 152% auto no-repeat;
   }
 
   .hero-copy {
@@ -5776,7 +5776,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 .vagger-story-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(8, 5, 23, 0.68), rgba(8, 5, 23, 0.22)), url("assets/works/playground/遊戲A_瓦爾格Vagger/通用_瓦爾格_橫向背景(有特效).png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(8, 5, 23, 0.68), rgba(8, 5, 23, 0.22)), url("assets/deploy/asset-032.png") center / cover no-repeat;
   filter: saturate(1.08);
 }
 
@@ -5904,7 +5904,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 .nymph-logo-scene {
   display: grid;
   place-items: center;
-  background: url("assets/works/playground/遊戲C_寧芙日記 Nymph's Dairy/CG_A_1_S.png") center / cover no-repeat;
+  background: url("assets/deploy/asset-033.png") center / cover no-repeat;
 }
 
 .nymph-tint {
@@ -5938,7 +5938,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
   padding: clamp(32px, 6vw, 86px);
-  background: linear-gradient(90deg, rgba(5, 3, 21, 0.22), rgba(5, 3, 21, 0.92)), url("assets/works/playground/遊戲C_寧芙日記 Nymph's Dairy/f3e37a_5a1dffde23174608b3ee77d77ecf8e21~mv2.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(5, 3, 21, 0.22), rgba(5, 3, 21, 0.92)), url("assets/deploy/asset-034.png") center / cover no-repeat;
 }
 
 .nymph-video-card {
@@ -6003,7 +6003,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 .star-logo-scene {
   display: grid;
   place-items: center;
-  background: linear-gradient(180deg, rgba(5, 3, 21, 0.34), rgba(5, 3, 21, 0.72)), url("assets/works/playground/遊戲C_逐星StarChasing/GameMain_Background.png") center / cover no-repeat;
+  background: linear-gradient(180deg, rgba(5, 3, 21, 0.34), rgba(5, 3, 21, 0.72)), url("assets/deploy/asset-004.png") center / cover no-repeat;
 }
 
 .star-logo-lockup {
@@ -6030,7 +6030,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
   padding: clamp(32px, 6vw, 86px);
-  background: linear-gradient(90deg, rgba(5, 3, 21, 0.2), rgba(5, 3, 21, 0.9)), url("assets/works/playground/遊戲C_逐星StarChasing/GameMain_Background.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(5, 3, 21, 0.2), rgba(5, 3, 21, 0.9)), url("assets/deploy/asset-004.png") center / cover no-repeat;
 }
 
 .star-video-card {
@@ -7149,7 +7149,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   content: "";
   position: absolute;
   inset: -14px;
-  background: url("assets/works/playground/遊戲C_寧芙日記 Nymph's Dairy/CG_A_1_S.png") center / cover no-repeat;
+  background: url("assets/deploy/asset-033.png") center / cover no-repeat;
   filter: blur(6px);
   transform: scale(1.02);
 }
@@ -7326,6 +7326,15 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   animation: vagger-soft-brush-loop 7.5s ease-in-out 2.1s infinite !important;
 }
 
+.nymph-video-card .playground-video-link img {
+  filter: brightness(0.92) saturate(1.03);
+  object-position: center center;
+}
+
+.nymph-video-card .playground-video-link:hover img {
+  filter: brightness(0.98) saturate(1.08);
+}
+
 @keyframes vagger-soft-brush-loop {
   0%, 100% { opacity: 0; transform: translateX(-58%) skewX(-12deg) scaleX(0.92); }
   18% { opacity: 0.34; }
@@ -7499,15 +7508,60 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 
 /* Vagger brush final override */
 .vagger-hero-cover::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
   z-index: 3;
+  pointer-events: none;
   background:
-    linear-gradient(104deg, transparent 16%, rgba(63, 224, 255, 0.14) 36%, rgba(255, 72, 194, 0.16) 48%, transparent 66%),
-    linear-gradient(168deg, transparent 48%, rgba(107, 235, 255, 0.08) 58%, transparent 70%);
+    radial-gradient(ellipse at 36% 38%, rgba(255, 241, 157, 0.36), transparent 15%),
+    radial-gradient(ellipse at 68% 60%, rgba(80, 235, 255, 0.34), transparent 18%),
+    linear-gradient(105deg, transparent 13%, rgba(47, 230, 255, 0.02) 22%, rgba(47, 230, 255, 0.68) 36%, rgba(155, 90, 255, 0.44) 47%, rgba(255, 64, 190, 0.62) 58%, rgba(255, 222, 120, 0.24) 66%, transparent 78%),
+    linear-gradient(168deg, transparent 38%, rgba(105, 244, 255, 0.34) 52%, rgba(255, 205, 101, 0.22) 64%, transparent 78%);
+  mix-blend-mode: screen;
   opacity: 0;
-  transform: translateX(-58%) skewX(-12deg);
+  filter: saturate(1.4) blur(0.3px);
+  transform: translateX(-70%) skewX(-12deg);
   animation: none !important;
 }
 
 .vagger-hero-cover.is-in-view::before {
-  animation: vagger-soft-brush-loop 7.5s ease-in-out 2.1s infinite !important;
+  animation: vagger-soft-brush-loop 6.8s ease-in-out 1.8s infinite !important;
+}
+
+@keyframes vagger-soft-brush-loop {
+  0%, 100% { opacity: 0; transform: translateX(-72%) skewX(-12deg) scaleX(0.98); }
+  13% { opacity: 0.92; }
+  34% { opacity: 0.58; }
+  54% { opacity: 0.82; }
+  76% { opacity: 0.36; transform: translateX(48%) skewX(-12deg) scaleX(1.16); }
+  92% { opacity: 0; transform: translateX(68%) skewX(-12deg) scaleX(1.04); }
+}
+
+/* Pata no-glow cleanup */
+.pata-case {
+  background: linear-gradient(90deg, #fffdf9 0%, #fffaf4 54%, #fff8f0 100%) !important;
+}
+
+.pata-brand-side,
+.pata-logo-mark,
+.pata-wordmark {
+  filter: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.logo-in-view .pata-logo-mark,
+.logo-in-view .pata-wordmark {
+  animation: pata-no-glow-pop 760ms cubic-bezier(.2, 1.25, .34, 1) both !important;
+}
+
+.logo-in-view .pata-wordmark {
+  animation-delay: 120ms !important;
+}
+
+@keyframes pata-no-glow-pop {
+  0% { opacity: 0; transform: scale(0.72); filter: none; }
+  58% { opacity: 1; transform: scale(1.06); filter: none; }
+  100% { opacity: 1; transform: scale(1); filter: none; }
 }
