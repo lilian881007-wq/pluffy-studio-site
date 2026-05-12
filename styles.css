@@ -7306,21 +7306,6 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   animation: vagger-brush-reveal 2100ms ease-out 120ms both !important;
 }
 
-.vagger-hero-cover::before {
-  z-index: 3;
-  background:
-    radial-gradient(circle at 9% 39%, rgba(255, 44, 178, 1) 0 4px, rgba(255, 44, 178, 0.38) 5px 14px, transparent 26px),
-    radial-gradient(circle at 28% 8%, rgba(60, 218, 255, 1) 0 4px, rgba(60, 218, 255, 0.36) 5px 16px, transparent 28px),
-    radial-gradient(circle at 58% 19%, rgba(255, 55, 112, 1) 0 4px, rgba(255, 55, 112, 0.34) 5px 15px, transparent 28px),
-    radial-gradient(circle at 72% 58%, rgba(45, 226, 255, 1) 0 4px, rgba(45, 226, 255, 0.34) 5px 16px, transparent 30px),
-    radial-gradient(circle at 91% 24%, rgba(255, 38, 190, 1) 0 4px, rgba(255, 38, 190, 0.34) 5px 16px, transparent 30px);
-  animation: none !important;
-}
-
-.vagger-hero-cover.is-in-view::before {
-  animation: vagger-sparkle-bright 2.8s ease-in-out 2.25s infinite !important;
-}
-
 /* Vagger final ambient brush loop */
 .vagger-hero-cover::before {
   content: "";
@@ -7512,53 +7497,17 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   display: none;
 }
 
-@keyframes vagger-sparkle-bright {
-  0%, 100% { opacity: 0.18; filter: blur(1px) brightness(1); }
-  14% { opacity: 0.95; filter: blur(0) brightness(1.4); }
-  28% { opacity: 0.28; }
-  48% { opacity: 1; filter: blur(0) brightness(1.55); }
-  66% { opacity: 0.22; }
-  82% { opacity: 0.86; filter: blur(0) brightness(1.35); }
-}
-
-/* Vagger ambient sparkle */
-.vagger-hero-cover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 11% 40%, rgba(255, 44, 178, 0.95) 0 2px, transparent 8px),
-    radial-gradient(circle at 28% 8%, rgba(60, 218, 255, 0.9) 0 2px, transparent 9px),
-    radial-gradient(circle at 58% 19%, rgba(255, 55, 112, 0.86) 0 2px, transparent 8px),
-    radial-gradient(circle at 72% 58%, rgba(45, 226, 255, 0.86) 0 2px, transparent 9px),
-    radial-gradient(circle at 91% 24%, rgba(255, 38, 190, 0.9) 0 2px, transparent 9px);
-  mix-blend-mode: screen;
-  opacity: 0;
-  animation: vagger-sparkle 3.6s ease-in-out 2.2s infinite;
-}
-
-@keyframes vagger-sparkle {
-  0%, 100% { opacity: 0.08; filter: blur(1px); }
-  18% { opacity: 0.72; filter: blur(0); }
-  32% { opacity: 0.18; }
-  55% { opacity: 0.92; filter: blur(0); }
-  76% { opacity: 0.24; }
-}
-
-/* Vagger sparkle final override */
+/* Vagger brush final override */
 .vagger-hero-cover::before {
   z-index: 3;
   background:
-    radial-gradient(circle at 9% 39%, rgba(255, 44, 178, 1) 0 4px, rgba(255, 44, 178, 0.38) 5px 14px, transparent 26px),
-    radial-gradient(circle at 28% 8%, rgba(60, 218, 255, 1) 0 4px, rgba(60, 218, 255, 0.36) 5px 16px, transparent 28px),
-    radial-gradient(circle at 58% 19%, rgba(255, 55, 112, 1) 0 4px, rgba(255, 55, 112, 0.34) 5px 15px, transparent 28px),
-    radial-gradient(circle at 72% 58%, rgba(45, 226, 255, 1) 0 4px, rgba(45, 226, 255, 0.34) 5px 16px, transparent 30px),
-    radial-gradient(circle at 91% 24%, rgba(255, 38, 190, 1) 0 4px, rgba(255, 38, 190, 0.34) 5px 16px, transparent 30px);
+    linear-gradient(104deg, transparent 16%, rgba(63, 224, 255, 0.14) 36%, rgba(255, 72, 194, 0.16) 48%, transparent 66%),
+    linear-gradient(168deg, transparent 48%, rgba(107, 235, 255, 0.08) 58%, transparent 70%);
+  opacity: 0;
+  transform: translateX(-58%) skewX(-12deg);
   animation: none !important;
 }
 
 .vagger-hero-cover.is-in-view::before {
-  animation: vagger-sparkle-bright 2.8s ease-in-out 2.25s infinite !important;
+  animation: vagger-soft-brush-loop 7.5s ease-in-out 2.1s infinite !important;
 }
