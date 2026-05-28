@@ -10235,6 +10235,7 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 
 .brand-tone-grid {
   align-items: center;
+  transform: translateY(24px);
 }
 
 .brand-tone-grid article,
@@ -10245,6 +10246,12 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
 
 .brand-tone-grid article:hover {
   transform: none;
+}
+
+@media (max-width: 900px) {
+  .brand-tone-grid {
+    transform: none;
+  }
 }
 
 /* Remove the temporary banner styling after switching to real YouTube embed. */
