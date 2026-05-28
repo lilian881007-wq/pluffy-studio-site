@@ -427,6 +427,19 @@ main > section + section::before {
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
+.work-grid .work-card[href="work-pluffy-brand.html"] { order: 1; }
+.work-grid .work-card[href="work-social-template.html"] { order: 2; }
+.work-grid .work-card[href="work-social-templates.html"] { order: 3; }
+.work-grid .work-card[href="work-print-package.html"] { order: 4; }
+.work-grid .work-card[href="work-store-signage.html"] { order: 5; }
+.work-grid .work-card[href="video.html"] { order: 6; }
+.work-grid .work-card[href="work-illustration.html"] { order: 7; }
+.work-grid .work-card[href="photography.html"] { order: 8; }
+.work-grid .work-card[href="work-3d-render.html"] { order: 9; }
+.work-grid .work-card[href="playground.html"] { order: 10; }
+.work-grid .work-card[href="work-presentation.html"] { order: 11; }
+.work-grid .work-card[href="event-visual.html"] { order: 12; }
+
 .work-card::before {
   content: "";
   position: absolute;
