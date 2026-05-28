@@ -1,5 +1,5 @@
 (() => {
-  const dataUrl = "data/site.json";
+  const dataUrl = "data/site.json?v=20260519-event";
 
   const escapeHtml = (value) =>
     String(value ?? "")

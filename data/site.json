@@ -1,4 +1,4 @@
-﻿{
+{
   "settings": {
     "brandName": "Pluffy Studio",
     "lineLabel": "LINE：@902fkyxx",
@@ -17,26 +17,56 @@
       "featured": true
     },
     {
-      "title": "社群視覺模板",
-      "category": "Visual System",
-      "summary": "貼文版型、活動公告、商品資訊圖與限時動態模板。",
-      "image": "assets/pluffy-logo-character-bg.jpg",
+      "title": "社群貼文設計",
+      "category": "Social Posts",
+      "summary": "單張貼文、組圖貼文、活動公告與日常社群內容視覺。",
+      "image": "assets/works/social-template/posts/single-post/巴哈ACG創作大賽.png",
+      "imageClass": "social-cover",
       "url": "work-social-template.html",
+      "featured": false
+    },
+    {
+      "title": "社群模板設計",
+      "category": "Social Templates",
+      "summary": "商品資訊、活動內容、電商上架與節慶公告模板，整理成可延伸的版型系統。",
+      "image": "assets/works/social-template/post-templates/電商_D/新年公告_紅包展示圖_01.png",
+      "imageClass": "social-cover",
+      "url": "work-social-templates.html",
       "featured": false
     },
     {
       "title": "包裝與貼紙設計",
       "category": "Packaging",
       "summary": "適用於品牌出貨、禮盒、攤位小卡與手作商品標籤。",
-      "image": "assets/deploy/asset-024.png",
+      "image": "assets/works/print-package/package-main/01_充電器-U220_模擬.png",
+      "imageClass": "package-cover",
       "url": "work-print-package.html",
+      "featured": false
+    },
+    {
+      "title": "活動主視覺",
+      "category": "Event Visual",
+      "summary": "中秋、春酒與活動企劃的主視覺延伸，包含公告、邀請函、背板與情境模擬。",
+      "image": "assets/works/event-visual/mid-autumn/米可中秋節卡片模擬B.png",
+      "imageClass": "event-cover",
+      "url": "event-visual.html",
+      "featured": false
+    },
+    {
+      "title": "簡報設計",
+      "category": "Presentation",
+      "summary": "企劃提案、流程整理與專題報告頁面，將資訊轉成清楚可閱讀的簡報版面。",
+      "image": "assets/works/PPT/04.png",
+      "imageClass": "presentation-cover",
+      "url": "work-presentation.html",
       "featured": false
     },
     {
       "title": "店面廣告設計",
       "category": "Store Advertising",
-      "summary": "招牌、帆布、燈箱、立牌與店面宣傳物，協助品牌在實體空間被清楚看見。",
-      "image": "assets/deploy/asset-030.jpg",
+      "summary": "招牌、帆布、立牌與店面宣傳物，協助品牌在實體空間被清楚看見。",
+      "image": "assets/works/store-signage/signage/onsite/S__38510596_0.jpg",
+      "imageClass": "store-cover",
       "url": "work-store-signage.html",
       "featured": false
     },
@@ -44,15 +74,17 @@
       "title": "角色插畫委託",
       "category": "Illustration",
       "summary": "頭像、品牌角色、活動主視覺與客製插圖。",
-      "image": "assets/deploy/asset-013.png",
+      "image": "assets/works/illustration/LoveYou_有背景.png",
+      "imageClass": "illustration-cover",
       "url": "work-illustration.html",
       "featured": false
     },
     {
-      "title": "品牌周邊設計與商品呈現",
-      "category": "Product Presentation",
-      "summary": "從商品設計、視覺風格到拍攝與上架，整理出一套可直接使用的品牌內容。",
-      "image": "assets/pricing-hero-photo-mockup-small.jpg",
+      "title": "商品攝影與同人周邊",
+      "category": "Photography / Fan Goods",
+      "summary": "上架圖、實體照、同人周邊與活動企劃紀錄，整理成可瀏覽的作品索引。",
+      "image": "assets/works/photography/202306上架圖_貓咪.png",
+      "imageClass": "photo-cover",
       "url": "photography.html",
       "featured": false
     },
@@ -60,7 +92,8 @@
       "title": "3D 與渲染作品",
       "category": "3D Render",
       "summary": "產品建模、材質設定、場景光影與品牌視覺模擬。",
-      "image": "assets/deploy/asset-035.png",
+      "image": "assets/works/3d-render/render/B_01.png",
+      "imageClass": "render-cover",
       "url": "work-3d-render.html",
       "featured": false
     },
@@ -69,6 +102,7 @@
       "category": "Editing",
       "summary": "短影音、活動紀錄與宣傳影片整理，作為品牌內容的延伸呈現。",
       "image": "https://img.youtube.com/vi/KuWLJl3KfGA/hqdefault.jpg",
+      "imageClass": "video-cover",
       "url": "video.html",
       "featured": false
     },
@@ -76,7 +110,8 @@
       "title": "遊戲與互動作品",
       "category": "Interactive",
       "summary": "保留過去的小遊戲與互動練習，看見角色、介面與體驗節奏。",
-      "image": "assets/deploy/asset-001.jpg",
+      "image": "assets/works/playground/遊戲A_瓦爾格Vagger/瓦爾格Vagger專刊_縮小.jpg",
+      "imageClass": "interactive-cover",
       "url": "playground.html",
       "featured": false
     }
