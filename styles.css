@@ -5923,7 +5923,7 @@ main > section + section::before {
 }
 
 .lightbox-overlay.is-portfolio .portfolio-gallery.layout-single .single-lightbox-stage {
-  min-height: min(74vh, 820px);
+  min-height: min(64vh, 700px);
   display: grid;
   place-items: center;
   border: 0;
@@ -5931,10 +5931,10 @@ main > section + section::before {
 }
 
 .lightbox-overlay.is-portfolio .portfolio-gallery.layout-single .single-lightbox-stage img {
-  width: min(92vw, 1400px);
+  width: auto;
   height: auto;
   max-width: 100%;
-  max-height: min(82vh, 900px);
+  max-height: min(64vh, 700px);
   padding: 0;
   object-fit: contain;
   border: 0;
