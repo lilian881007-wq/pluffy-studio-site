@@ -8911,6 +8911,15 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   object-position: center 44%;
 }
 
+.work-card .video-cover::before,
+.work-card .video-cover::after {
+  display: none;
+}
+
+.work-card .video-cover {
+  background: #fff8ef;
+}
+
 .interactive-cover img {
   object-position: center;
 }
