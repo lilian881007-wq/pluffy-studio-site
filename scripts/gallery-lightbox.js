@@ -164,7 +164,7 @@
       return;
     }
 
-    if (layout === "layout-single" || layout === "layout-wide") {
+    if (layout === "layout-single" || layout === "layout-wide" || layout === "layout-render") {
       renderSingle(layout === "layout-wide" ? "layout-wide" : "");
       const hasMultiple = items.length > 1;
       prevButton.hidden = !hasMultiple;
