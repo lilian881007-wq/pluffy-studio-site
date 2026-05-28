@@ -1,5 +1,6 @@
 (function () {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
 
   const revealSelectors = [
     ".section-band",
@@ -46,6 +47,16 @@
   );
 
   document.querySelectorAll(revealSelectors.join(",")).forEach(register);
+
+  const revealAll = () => {
+    document.documentElement.classList.add("motion-done");
+    document.querySelectorAll(".motion-reveal").forEach((item) => {
+      item.classList.add("is-visible");
+    });
+  };
+
+  window.addEventListener("load", () => window.setTimeout(revealAll, 1600), { once: true });
+  window.setTimeout(revealAll, 3200);
 
   const mutationObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {

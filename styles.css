@@ -4814,9 +4814,9 @@ main > section + section::before {
   }
 
   .motion-ready .motion-reveal {
-    opacity: 0;
-    filter: blur(3px);
-    transform: translateY(18px);
+    opacity: 0.38;
+    filter: blur(1.5px);
+    transform: translateY(12px);
     transition:
       opacity 720ms ease,
       filter 720ms ease,
@@ -4829,6 +4829,12 @@ main > section + section::before {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+  }
+
+  .motion-ready.motion-done .motion-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 
   .project-hero > div:last-child,
@@ -4888,7 +4894,9 @@ main > section + section::before {
   }
 
   .motion-ready .work-card.is-visible .work-media::before,
-  .motion-ready .gallery-item.is-visible::before {
+  .motion-ready .gallery-item.is-visible::before,
+  .motion-ready.motion-done .work-card .work-media::before,
+  .motion-ready.motion-done .gallery-item::before {
     transform: translateX(105%);
   }
 
