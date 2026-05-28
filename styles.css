@@ -3316,11 +3316,11 @@ main > section + section::before {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.render-gallery:has(+ .project-switcher) {
+.project-gallery:has(+ .project-switcher) {
   padding-bottom: clamp(28px, 3.2vw, 44px);
 }
 
-.render-gallery + .project-switcher {
+.project-gallery + .project-switcher {
   padding-top: clamp(34px, 4vw, 56px);
 }
 
