@@ -149,6 +149,8 @@
   const renderVideos = (videos) => {
     const root = document.querySelector("[data-cms-videos]");
     if (!root || !Array.isArray(videos) || videos.length === 0) return;
+    const hasPublishedVideo = videos.some((video) => video && (video.videoUrl || video.coverImage));
+    if (!hasPublishedVideo) return;
     root.innerHTML = videos
       .map((video, index) => {
         const image = video.coverImage
