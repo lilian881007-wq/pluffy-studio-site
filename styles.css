@@ -4605,11 +4605,11 @@ main > section + section::before {
   grid-auto-columns: clamp(360px, 36vw, 560px);
   grid-template-columns: none;
   gap: 16px;
-  margin-right: calc(clamp(20px, 6vw, 80px) * -1);
-  padding: 4px clamp(20px, 6vw, 80px) 18px 0;
+  padding: 4px 0 18px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+  scroll-padding-left: 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(139, 79, 52, 0.28) transparent;
 }
@@ -5177,8 +5177,7 @@ main > section + section::before {
 
   .project-switcher-grid {
     grid-auto-columns: minmax(250px, 82vw);
-    margin-right: -18px;
-    padding-right: 18px;
+    padding-right: 0;
   }
 
   .game-team {

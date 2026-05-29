@@ -1,4 +1,14 @@
 (function () {
+  const resetProjectSwitcherScroll = () => {
+    document.querySelectorAll(".project-switcher-grid").forEach((grid) => {
+      grid.scrollLeft = 0;
+    });
+  };
+
+  resetProjectSwitcherScroll();
+  window.addEventListener("pageshow", resetProjectSwitcherScroll);
+  window.addEventListener("load", () => window.setTimeout(resetProjectSwitcherScroll, 80), { once: true });
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!("IntersectionObserver" in window)) return;
 
