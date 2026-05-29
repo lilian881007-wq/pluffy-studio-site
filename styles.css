@@ -3745,6 +3745,18 @@ main > section + section::before {
   object-fit: contain;
 }
 
+.social-template-gallery .line-menu-preview {
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  padding: 0;
+  background: #fffdf9;
+}
+
+.social-template-gallery .line-menu-preview img {
+  object-fit: cover;
+  object-position: center top;
+}
+
 @media (max-width: 720px) {
   .presentation-deck-preview {
     min-height: 360px;
