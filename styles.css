@@ -4603,7 +4603,7 @@ main > section + section::before {
   padding: clamp(64px, 7vw, 96px) clamp(20px, 6vw, 80px);
   background: #fffaf4;
   border-top: 1px solid var(--line);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
@@ -4613,30 +4613,10 @@ main > section + section::before {
 
 .project-switcher-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: clamp(360px, 36vw, 560px);
-  grid-template-columns: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 16px;
-  padding: 4px 0 18px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-  scroll-padding-left: 0;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(139, 79, 52, 0.28) transparent;
-}
-
-.project-switcher-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.project-switcher-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.project-switcher-grid::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(139, 79, 52, 0.22);
+  padding: 4px 0 0;
+  overflow: visible;
 }
 
 .project-switcher-card {
@@ -4648,7 +4628,6 @@ main > section + section::before {
   background: rgba(255, 253, 249, 0.86);
   color: var(--heading);
   box-shadow: 0 10px 24px rgba(91, 68, 52, 0.035);
-  scroll-snap-align: start;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
@@ -5188,8 +5167,7 @@ main > section + section::before {
   }
 
   .project-switcher-grid {
-    grid-auto-columns: minmax(250px, 82vw);
-    padding-right: 0;
+    grid-template-columns: 1fr;
   }
 
   .game-team {
