@@ -3746,15 +3746,19 @@ main > section + section::before {
 }
 
 .social-template-gallery .line-menu-preview {
-  aspect-ratio: 16 / 10;
+  display: block;
+  aspect-ratio: 2048 / 1375;
   min-height: 0;
   padding: 0;
   background: #fffdf9;
 }
 
 .social-template-gallery .line-menu-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 @media (max-width: 720px) {
