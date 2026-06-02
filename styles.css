@@ -4616,14 +4616,15 @@ main > section + section::before {
 }
 
 .project-switcher-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   padding: 4px 0 0;
   overflow: visible;
 }
 
 .project-switcher-card {
+  flex: 1 1 clamp(300px, 22vw, 420px);
   display: block;
   min-height: 124px;
   padding: 18px 20px;
@@ -5171,6 +5172,7 @@ main > section + section::before {
   }
 
   .project-switcher-grid {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
