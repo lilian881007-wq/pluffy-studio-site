@@ -172,7 +172,7 @@ main > section + section::before {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.9) 18%, rgba(255, 250, 244, 0.42) 39%, rgba(255, 250, 244, 0.08) 57%, rgba(255, 250, 244, 0) 72%),
-    url("assets/hero-pluffy-photo-mockup-small.jpg") 34% 46% / 128% auto no-repeat;
+    url("assets/hero-pluffy-photo-mockup.png") 34% 46% / 128% auto no-repeat;
 }
 
 .hero::before {
@@ -360,12 +360,19 @@ main > section + section::before {
 }
 
 .intro p {
-  max-width: 980px;
+  max-width: 1280px;
   margin: 0 auto;
   font-size: clamp(1.04rem, 1.6vw, 1.28rem);
   font-weight: 500;
   line-height: 1.85;
   color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .intro p {
+    white-space: normal;
+  }
 }
 
 .section-heading {
@@ -393,21 +400,33 @@ main > section + section::before {
 .work-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 8px 12px;
   margin: -10px 0 28px;
 }
 
 .work-filters span {
   display: inline-flex;
-  min-height: 34px;
   align-items: center;
-  padding: 6px 14px;
-  border: 1px solid rgba(139, 79, 52, 0.13);
-  border-radius: 999px;
-  background: rgba(255, 253, 249, 0.74);
   color: rgba(90, 81, 75, 0.72);
   font-size: 0.88rem;
   font-weight: 600;
+}
+
+.work-filters span:not(:last-child)::after {
+  content: "•";
+  margin-left: 12px;
+  color: rgba(242, 166, 90, 0.5);
+}
+
+.work-filters .work-filter-label {
+  color: rgba(139, 79, 52, 0.82);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+}
+
+.work-filters .work-filter-label::after {
+  content: "/";
 }
 
 .work-card,
@@ -2759,24 +2778,72 @@ main > section + section::before {
 }
 
 .hero-video-visual b {
-  left: 50%;
-  top: 50%;
-  width: 74px;
-  height: 74px;
-  border-radius: 999px;
-  background: #fffdf9;
-  box-shadow: 0 16px 38px rgba(139, 79, 52, 0.1);
-  transform: translate(-50%, -50%);
+  display: none;
 }
 
 .hero-video-visual i {
-  left: calc(50% - 8px);
-  top: calc(50% - 14px);
-  width: 0;
-  height: 0;
-  border-left: 22px solid var(--orange);
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
+  display: none;
+}
+
+.hero-event-visual span {
+  inset: 15% 14%;
+  border: 1px solid rgba(185, 126, 84, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 225, 185, 0.72) 0 32%, transparent 32%),
+    linear-gradient(180deg, #fffdf9, rgba(255, 245, 234, 0.82));
+  box-shadow: 0 18px 44px rgba(139, 79, 52, 0.08);
+  transform: rotate(-2deg);
+}
+
+.hero-event-visual b {
+  left: 20%;
+  right: 20%;
+  top: 43%;
+  height: 22%;
+  border-radius: 12px;
+  background: rgba(242, 166, 90, 0.24);
+  transform: rotate(2deg);
+}
+
+.hero-event-visual i {
+  left: 35%;
+  bottom: 24%;
+  width: 30%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(139, 79, 52, 0.18);
+  box-shadow: 0 -22px 0 rgba(139, 79, 52, 0.1), 0 22px 0 rgba(139, 79, 52, 0.1);
+}
+
+.hero-photo-visual span {
+  inset: 14% 13%;
+  border: 1px solid rgba(185, 126, 84, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(145deg, transparent 58%, rgba(242, 166, 90, 0.18) 58%),
+    linear-gradient(180deg, #fffdf9, rgba(255, 245, 234, 0.76));
+  box-shadow: 0 18px 44px rgba(139, 79, 52, 0.08);
+  transform: rotate(2deg);
+}
+
+.hero-photo-visual b {
+  inset: 23% 20%;
+  border: 1px solid rgba(185, 126, 84, 0.14);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 225, 185, 0.48), transparent 44%),
+    rgba(255, 253, 249, 0.78);
+  transform: rotate(-3deg);
+}
+
+.hero-photo-visual i {
+  left: 25%;
+  right: 25%;
+  bottom: 22%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(139, 79, 52, 0.18);
 }
 
 .hero-person-visual span {
@@ -10216,17 +10283,6 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
     rgba(255, 253, 249, 0.82);
 }
 
-.brand-extension-grid .gallery-item::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(242, 166, 90, 0.42);
-  box-shadow: 16px 0 0 rgba(242, 166, 90, 0.22);
-}
 
 .brand-extension-grid figcaption {
   padding: 8px 12px;

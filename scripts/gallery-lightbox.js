@@ -29,7 +29,7 @@
       <header class="social-lightbox-head">
         <img src="assets/pluffy-logo-icon.png" alt="">
         <div>
-          <strong>Pluffy Studio</strong>
+          <strong>帕芙工坊 Pluffy Studio</strong>
           <span class="post-subtitle">Social post preview</span>
           <small>Portfolio preview</small>
         </div>
@@ -160,7 +160,7 @@
       prevButton.hidden = !hasMultiple;
       nextButton.hidden = !hasMultiple;
       count.hidden = false;
-      count.innerHTML = '<span class="reaction-bubbles"><i>♡</i><i>↗</i></span><b>Pluffy Studio 和其他人都說讚</b><em>留言 · 分享</em>';
+      count.innerHTML = '<span class="reaction-bubbles"><i>♡</i><i>↗</i></span><b>帕芙工坊 Pluffy Studio 和其他人都說讚</b><em>留言 · 分享</em>';
       return;
     }
 
@@ -236,9 +236,9 @@
       overlay.classList.toggle("is-portfolio", isPortfolio);
       overlay.classList.toggle("is-social-post", layout === "layout-social-post");
 
-      accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "Work preview") : "Pluffy Studio";
+      accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "Work preview") : "帕芙工坊 Pluffy Studio";
       title.hidden = isPortfolio && layout !== "layout-social-post";
-      title.textContent = layout === "layout-social-post" ? "Pluffy Studio / Social Post" : (trigger.dataset.postTitle || "Social visual");
+      title.textContent = layout === "layout-social-post" ? "帕芙工坊 Pluffy Studio / Social Post" : (trigger.dataset.postTitle || "Social visual");
       meta.textContent = isPortfolio && mockupCount
         ? `${imageCount} works + ${mockupCount} mockups`
         : (isPortfolio ? `${imageCount} works` : "Portfolio preview");

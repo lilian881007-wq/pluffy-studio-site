@@ -86,7 +86,7 @@
   const renderSettings = (settings) => {
     if (!settings) return;
     const line = document.querySelector("[data-cms-line]");
-    if (line) line.href = settings.lineUrl || "#";
+    if (line) line.href = settings.lineUrl || "https://line.me/R/ti/p/@902fkyxx";
 
     const lineId = document.querySelector(".contact-line-id");
     if (lineId && settings.lineLabel) lineId.textContent = settings.lineLabel;
