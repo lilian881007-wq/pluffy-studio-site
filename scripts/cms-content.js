@@ -1,5 +1,5 @@
 (() => {
-  const dataUrl = "data/site.json?v=20260529-home-order";
+  const dataUrl = "data/site.json?v=20260929-line-tag-fix";
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -85,8 +85,11 @@
 
   const renderSettings = (settings) => {
     if (!settings) return;
-    const line = document.querySelector("[data-cms-line]");
-    if (line) line.href = settings.lineUrl || "https://line.me/R/ti/p/@902fkyxx";
+    document.querySelectorAll("[data-cms-line]").forEach((line) => {
+      line.href = settings.lineUrl || "https://line.me/R/ti/p/@902fkyxx";
+      line.target = "_blank";
+      line.rel = "noopener";
+    });
 
     const lineId = document.querySelector(".contact-line-id");
     if (lineId && settings.lineLabel) lineId.textContent = settings.lineLabel;
@@ -149,8 +152,6 @@
   const renderVideos = (videos) => {
     const root = document.querySelector("[data-cms-videos]");
     if (!root || !Array.isArray(videos) || videos.length === 0) return;
-    const hasPublishedVideo = videos.some((video) => video && (video.videoUrl || video.coverImage));
-    if (!hasPublishedVideo) return;
     root.innerHTML = videos
       .map((video, index) => {
         const image = video.coverImage

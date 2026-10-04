@@ -1,16 +1,5 @@
 (function () {
-  const resetProjectSwitcherScroll = () => {
-    document.querySelectorAll(".project-switcher-grid").forEach((grid) => {
-      grid.scrollLeft = 0;
-    });
-  };
-
-  resetProjectSwitcherScroll();
-  window.addEventListener("pageshow", resetProjectSwitcherScroll);
-  window.addEventListener("load", () => window.setTimeout(resetProjectSwitcherScroll, 80), { once: true });
-
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  if (!("IntersectionObserver" in window)) return;
 
   const revealSelectors = [
     ".section-band",
@@ -28,7 +17,8 @@
     ".game-entry",
     ".video-card",
     ".game-team",
-    ".site-footer"
+    ".site-footer",
+    ".ambient-doodle"
   ];
 
   document.documentElement.classList.add("motion-ready");
@@ -57,16 +47,6 @@
   );
 
   document.querySelectorAll(revealSelectors.join(",")).forEach(register);
-
-  const revealAll = () => {
-    document.documentElement.classList.add("motion-done");
-    document.querySelectorAll(".motion-reveal").forEach((item) => {
-      item.classList.add("is-visible");
-    });
-  };
-
-  window.addEventListener("load", () => window.setTimeout(revealAll, 1600), { once: true });
-  window.setTimeout(revealAll, 3200);
 
   const mutationObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {

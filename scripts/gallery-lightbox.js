@@ -2,50 +2,35 @@
   const triggers = document.querySelectorAll("[data-lightbox-src]");
   if (!triggers.length) return;
 
-  triggers.forEach((trigger) => {
-    if (trigger.dataset.lightboxLayout !== "social-post") return;
-    const preview = trigger.querySelector(".work-set-grid");
-    if (!preview) return;
-    const previewItems = (trigger.dataset.lightboxItems || trigger.dataset.lightboxSrc)
-      .split("|")
-      .map((item) => item.trim())
-      .filter(Boolean);
-    const more = preview.querySelector("span");
-    preview.querySelectorAll("img").forEach((img) => img.remove());
-    previewItems.slice(0, 5).forEach((src) => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = "";
-      preview.insertBefore(img, more);
-    });
-    preview.classList.add(`social-preview-count-${Math.min(previewItems.length, 5)}`);
-  });
-
   const overlay = document.createElement("div");
   overlay.className = "lightbox-overlay";
   overlay.innerHTML = `
-    <article class="lightbox-panel social-lightbox-post" role="dialog" aria-modal="true" aria-label="Work preview">
-      <button class="lightbox-close" type="button" aria-label="Close preview">x</button>
+    <article class="lightbox-panel social-lightbox-post" role="dialog" aria-modal="true" aria-label="作品預覽">
+      <button class="lightbox-close" type="button" aria-label="關閉預覽">×</button>
       <header class="social-lightbox-head">
         <img src="assets/pluffy-logo-icon.png" alt="">
         <div>
-          <strong>帕芙工坊 Pluffy Studio</strong>
-          <span class="post-subtitle">Social post preview</span>
-          <small>Portfolio preview</small>
+          <strong>Pluffy Studio</strong>
+          <span class="post-subtitle">貼文系列 · 品牌日常視覺</span>
+          <small>剛剛 · 公開</small>
         </div>
-        <em>...</em>
+        <em>•••</em>
       </header>
-      <p class="social-lightbox-copy">Social visual series preview.</p>
+      <p class="social-lightbox-copy">品牌日常貼文系列整理，讓多張視覺維持同一套語氣。</p>
       <div class="lightbox-media">
-        <button class="lightbox-nav prev" type="button" aria-label="Previous item"><</button>
-        <div class="lightbox-collage" aria-label="Work images"></div>
-        <button class="lightbox-nav next" type="button" aria-label="Next item">></button>
+        <button class="lightbox-nav prev" type="button" aria-label="上一組">‹</button>
+        <div class="lightbox-collage" aria-label="作品圖片組"></div>
+        <button class="lightbox-nav next" type="button" aria-label="下一組">›</button>
       </div>
-      <div class="social-lightbox-stats"><small class="lightbox-count"></small></div>
+      <div class="social-lightbox-stats">
+        <span class="reaction-stack"><i>♡</i><i>◎</i><i>↗</i></span>
+        <span>128</span>
+        <small class="lightbox-count"></small>
+      </div>
       <footer class="social-lightbox-foot">
-        <button type="button">Like</button>
-        <button type="button">Comment</button>
-        <button type="button">Share</button>
+        <button type="button">♡ 讚</button>
+        <button type="button">收藏</button>
+        <button type="button">分享</button>
       </footer>
     </article>
   `;
@@ -66,20 +51,19 @@
   let layout = "";
   let imageCount = 0;
   let mockupCount = 0;
-  let socialCompositeSrc = "";
 
   const mockupLabels = {
-    print: "Print mockup",
-    label: "Label mockup",
-    card: "Card mockup",
-    signage: "Signage mockup",
-    banner: "Banner mockup",
-    lightbox: "Lightbox mockup",
-    standee: "Standee mockup",
-    character: "Character design",
-    avatar: "Avatar design",
-    mascot: "Mascot concept",
-    sticker: "Sticker mockup"
+    print: "印刷模擬圖",
+    label: "標籤模擬圖",
+    card: "卡片模擬圖",
+    signage: "招牌模擬圖",
+    banner: "布旗模擬圖",
+    lightbox: "燈箱模擬圖",
+    standee: "立牌模擬圖",
+    character: "角色模擬圖",
+    avatar: "頭像模擬圖",
+    mascot: "主視覺模擬圖",
+    sticker: "貼圖模擬圖"
   };
 
   const mockupMarkup = {
@@ -96,107 +80,54 @@
     sticker: '<div class="sticker-mockup" aria-hidden="true"></div>'
   };
 
-  const renderThumbs = () => items
-    .map((item, index) => item.type === "image"
-      ? `<button class="${index === 0 ? "is-active" : ""}" type="button" data-lightbox-index="${index}" aria-label="View item ${index + 1}"><img src="${item.src}" alt=""></button>`
-      : "")
-    .join("");
-
-  const bindThumbs = () => {
-    collage.querySelectorAll("[data-lightbox-index]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const index = Number(button.dataset.lightboxIndex || 0);
-        if (!index) return;
-        items = [...items.slice(index), ...items.slice(0, index)];
-        render();
-      });
-    });
-  };
-
-  const renderSingle = (variant = "") => {
-    const activeItem = items[0];
-    collage.className = `lightbox-collage portfolio-gallery layout-single${variant ? ` ${variant}` : ""}`;
-    collage.innerHTML = `
-      <div class="single-lightbox-stage">
-        ${activeItem && activeItem.type === "image" ? `<img src="${activeItem.src}" alt="Work preview">` : ""}
-      </div>
-      <div class="single-lightbox-thumbs" aria-label="Work thumbnails">
-        ${items.length > 1 ? renderThumbs() : ""}
-      </div>
-    `;
-    bindThumbs();
-  };
-
-  const renderSocialPost = () => {
-    if (socialCompositeSrc) {
-      const countClass = `layout-social-count-${Math.min(items.length, 5)}`;
-      collage.className = `lightbox-collage portfolio-gallery layout-social-post layout-social-composite ${countClass}`;
-      collage.innerHTML = `<img class="social-post-composite" src="${socialCompositeSrc}" alt="Social post series preview">`;
-      return false;
-    }
-
-    const visibleItems = items.slice(0, 5);
-    const countClass = `layout-social-count-${Math.min(items.length, 5)}`;
-    collage.className = `lightbox-collage portfolio-gallery layout-social-post ${countClass}`;
-    collage.innerHTML = `
-      <div class="social-post-collage" aria-label="Social post series">
-        ${visibleItems
-          .map((item, index) => {
-            const more = index === 4 && items.length > 5 ? `<span class="collage-more">+${items.length - 5}</span>` : "";
-            return item.type === "image"
-              ? `<span class="social-post-tile${index === 0 ? " is-featured" : ""}"><img src="${item.src}" alt="Social post ${index + 1}">${more}</span>`
-              : "";
-          })
-          .join("")}
-      </div>
-    `;
-    bindThumbs();
-    return false;
-  };
-
-  function render() {
-    if (layout === "layout-social-post") {
-      const hasMultiple = renderSocialPost();
-      prevButton.hidden = !hasMultiple;
-      nextButton.hidden = !hasMultiple;
-      count.hidden = false;
-      count.innerHTML = '<span class="reaction-bubbles"><i>♡</i><i>↗</i></span><b>帕芙工坊 Pluffy Studio 和其他人都說讚</b><em>留言 · 分享</em>';
-      return;
-    }
-
-    if (layout === "layout-single" || layout === "layout-wide" || layout === "layout-render") {
-      renderSingle(layout === "layout-wide" ? "layout-wide" : "");
-      const hasMultiple = items.length > 1;
-      prevButton.hidden = !hasMultiple;
-      nextButton.hidden = !hasMultiple;
-      count.hidden = !items.length;
-      count.textContent = `${imageCount} works`;
-      return;
-    }
-
+  const render = () => {
     const visibleItems = isPortfolio ? items : items.slice(0, 5);
     collage.className = isPortfolio
       ? `lightbox-collage portfolio-gallery${layout ? ` ${layout}` : ""}`
       : `lightbox-collage collage-${Math.min(visibleItems.length, 5)}`;
-    collage.innerHTML = visibleItems
-      .map((item, index) => {
-        const more = !isPortfolio && index === 4 && items.length > 5 ? `<span class="collage-more">+${items.length - 5}</span>` : "";
-        const label = isPortfolio ? "Work preview" : "Social post";
-        if (item.type === "mockup") {
-          return `<div class="lightbox-mockup-tile">${mockupMarkup[item.kind] || mockupMarkup.print}<span>${item.label}</span></div>`;
-        }
-        return `<div><img src="${item.src}" alt="${label} ${index + 1}">${more}</div>`;
-      })
-      .join("");
+    if (isPortfolio && layout.includes("layout-single")) {
+      const imageItems = items.filter((item) => item.type === "image");
+      const active = imageItems[0];
+      collage.innerHTML = `
+        <div class="single-lightbox-stage">
+          ${active ? `<img src="${active.src}" alt="作品預覽 1">` : ""}
+        </div>
+        <div class="single-lightbox-thumbs" aria-label="作品縮圖">
+          ${imageItems.map((item, index) => `
+            <button class="${index === 0 ? "is-active" : ""}" type="button" data-thumb-index="${index}" aria-label="查看第 ${index + 1} 張作品">
+              <img src="${item.src}" alt="">
+            </button>
+          `).join("")}
+        </div>
+      `;
+      collage.querySelectorAll("[data-thumb-index]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.thumbIndex);
+          items = [...imageItems.slice(index), ...imageItems.slice(0, index), ...items.filter((item) => item.type === "mockup")];
+          render();
+        });
+      });
+    } else {
+      collage.innerHTML = visibleItems
+        .map((item, index) => {
+          const more = !isPortfolio && index === 4 && items.length > 5 ? `<span class="collage-more">+${items.length - 5}</span>` : "";
+          const label = isPortfolio ? "作品預覽" : "貼文預覽";
+          if (item.type === "mockup") {
+            return `<div class="lightbox-mockup-tile">${mockupMarkup[item.kind] || mockupMarkup.print}<span>${item.label}</span></div>`;
+          }
+          return `<div><img src="${item.src}" alt="${label} ${index + 1}">${more}</div>`;
+        })
+        .join("");
+    }
 
-    const hasMultiple = !isPortfolio && items.length > 1;
+    const hasMultiple = (!isPortfolio || layout.includes("layout-single")) && items.length > 1;
     prevButton.hidden = !hasMultiple;
     nextButton.hidden = !hasMultiple;
     count.hidden = !items.length;
     count.textContent = isPortfolio && mockupCount
-      ? `${imageCount} works + ${mockupCount} mockups`
-      : (isPortfolio ? `${imageCount} works` : `${imageCount} posts`);
-  }
+      ? `${imageCount} 張作品 + ${mockupCount} 張模擬圖`
+      : (isPortfolio ? `${imageCount} 張作品` : `${imageCount} 張`);
+  };
 
   const close = () => {
     overlay.classList.remove("is-open");
@@ -221,30 +152,24 @@
         .split("|")
         .map((item) => item.trim())
         .filter(Boolean)
-        .map((kind) => ({ type: "mockup", kind, label: mockupLabels[kind] || "Mockup" }));
-
+        .map((kind) => ({ type: "mockup", kind, label: mockupLabels[kind] || "模擬圖" }));
       items = [...imageItems, ...mockupItems];
       imageCount = imageItems.length;
       mockupCount = mockupItems.length;
-      socialCompositeSrc = trigger.dataset.lightboxComposite || "";
 
       isPortfolio = trigger.classList.contains("work-set-preview") || trigger.classList.contains("image-preview-button") || trigger.dataset.lightboxMode === "portfolio";
-      layout = trigger.dataset.lightboxLayout
-        ? `layout-${trigger.dataset.lightboxLayout}`
-        : (isPortfolio ? "layout-single" : "");
-      if (layout === "layout-event") layout = "layout-single";
+      layout = trigger.dataset.lightboxLayout ? `layout-${trigger.dataset.lightboxLayout}` : "";
       overlay.classList.toggle("is-portfolio", isPortfolio);
-      overlay.classList.toggle("is-social-post", layout === "layout-social-post");
 
-      accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "Work preview") : "帕芙工坊 Pluffy Studio";
-      title.hidden = isPortfolio && layout !== "layout-social-post";
-      title.textContent = layout === "layout-social-post" ? "帕芙工坊 Pluffy Studio / Social Post" : (trigger.dataset.postTitle || "Social visual");
+      accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "作品預覽") : "Pluffy Studio";
+      title.hidden = isPortfolio;
+      title.textContent = isPortfolio ? "" : (trigger.dataset.postTitle || "貼文系列 · 品牌日常視覺");
       meta.textContent = isPortfolio && mockupCount
-        ? `${imageCount} works + ${mockupCount} mockups`
-        : (isPortfolio ? `${imageCount} works` : "Portfolio preview");
+        ? `${imageCount} 張作品 + ${mockupCount} 張模擬圖`
+        : (isPortfolio ? `${imageCount} 張作品` : "剛剛 · 公開");
       copy.textContent = trigger.dataset.postCopy || (isPortfolio
-        ? "Work images and mockups collected for portfolio preview."
-        : "Social visual series preview.");
+        ? "同一品項可放置多張作品圖與應用 mockup，方便一起檢視整體風格。"
+        : "品牌日常貼文系列整理，讓多張視覺維持同一套語氣。");
 
       render();
       overlay.classList.add("is-open");
