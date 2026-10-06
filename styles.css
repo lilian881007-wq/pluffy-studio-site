@@ -8887,6 +8887,18 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   object-fit: contain;
 }
 
+.work-card.featured .mascot-sample img.logo-horizontal {
+  width: min(82%, 520px);
+  max-height: 74%;
+  transform: translateY(-6px);
+}
+
+.work-card.featured .cms-image-media img[src*="pluffy-logo-horizontal"] {
+  width: min(82%, 520px);
+  max-height: 74%;
+  transform: translateY(-6px);
+}
+
 .work-card.featured .work-info {
   min-height: 230px;
   flex: 0 0 auto;
