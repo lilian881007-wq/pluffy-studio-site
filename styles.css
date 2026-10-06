@@ -6216,6 +6216,36 @@ main > section + section::before {
   object-fit: contain;
 }
 
+.lightbox-overlay.is-social-post .portfolio-gallery.layout-social-post:not(.layout-social-composite) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.lightbox-overlay.is-social-post .portfolio-gallery.layout-social-post .social-post-stage {
+  min-height: clamp(280px, 50vh, 620px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 0;
+  background: #fffdf9;
+}
+
+.lightbox-overlay.is-social-post .portfolio-gallery.layout-social-post .social-post-stage img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(58vh, 640px);
+  object-fit: contain;
+  padding: 0;
+}
+
+.lightbox-overlay.is-social-post .portfolio-gallery.layout-social-post .social-post-thumbs {
+  padding: 2px 2px 4px;
+}
+
 .lightbox-overlay.is-social-post .portfolio-gallery.layout-social-post .social-post-collage {
   min-height: 0;
   place-items: stretch;

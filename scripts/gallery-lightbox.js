@@ -51,6 +51,7 @@
   let layout = "";
   let imageCount = 0;
   let mockupCount = 0;
+  let compositeSrc = "";
 
   const mockupLabels = {
     print: "印刷模擬圖",
@@ -107,6 +108,33 @@
           render();
         });
       });
+    } else if (isPortfolio && layout.includes("layout-social-post")) {
+      const imageItems = items.filter((item) => item.type === "image");
+      const active = imageItems[0];
+      if (compositeSrc) {
+        collage.className += " layout-social-composite";
+        collage.innerHTML = `<img class="social-post-composite" src="${compositeSrc}" alt="貼文系列合成預覽">`;
+      } else {
+        collage.innerHTML = `
+          <div class="social-post-stage">
+            ${active ? `<img src="${active.src}" alt="貼文預覽 1">` : ""}
+          </div>
+          <div class="single-lightbox-thumbs social-post-thumbs" aria-label="貼文縮圖">
+            ${imageItems.map((item, index) => `
+              <button class="${index === 0 ? "is-active" : ""}" type="button" data-thumb-index="${index}" aria-label="查看第 ${index + 1} 張貼文">
+                <img src="${item.src}" alt="">
+              </button>
+            `).join("")}
+          </div>
+        `;
+        collage.querySelectorAll("[data-thumb-index]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const index = Number(button.dataset.thumbIndex);
+            items = [...imageItems.slice(index), ...imageItems.slice(0, index), ...items.filter((item) => item.type === "mockup")];
+            render();
+          });
+        });
+      }
     } else {
       collage.innerHTML = visibleItems
         .map((item, index) => {
@@ -120,7 +148,7 @@
         .join("");
     }
 
-    const hasMultiple = (!isPortfolio || layout.includes("layout-single")) && items.length > 1;
+    const hasMultiple = (!isPortfolio || layout.includes("layout-single") || (layout.includes("layout-social-post") && !compositeSrc)) && items.length > 1;
     prevButton.hidden = !hasMultiple;
     nextButton.hidden = !hasMultiple;
     count.hidden = !items.length;
@@ -156,10 +184,12 @@
       items = [...imageItems, ...mockupItems];
       imageCount = imageItems.length;
       mockupCount = mockupItems.length;
+      compositeSrc = trigger.dataset.lightboxComposite || "";
 
       isPortfolio = trigger.classList.contains("work-set-preview") || trigger.classList.contains("image-preview-button") || trigger.dataset.lightboxMode === "portfolio";
       layout = trigger.dataset.lightboxLayout ? `layout-${trigger.dataset.lightboxLayout}` : "";
       overlay.classList.toggle("is-portfolio", isPortfolio);
+      overlay.classList.toggle("is-social-post", layout.includes("layout-social-post"));
 
       accountName.textContent = isPortfolio ? (trigger.dataset.postTitle || "作品預覽") : "Pluffy Studio";
       title.hidden = isPortfolio;
