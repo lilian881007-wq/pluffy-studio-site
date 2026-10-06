@@ -949,7 +949,7 @@ main > section + section::before {
   margin: 0;
 }
 
-.designer-note h4 {
+.designer-note h3 {
   margin: 0 0 8px;
   color: var(--caramel);
   font-size: 1.12rem;
