@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://pluffy-studio-site.pages.dev/sitemap.xml
