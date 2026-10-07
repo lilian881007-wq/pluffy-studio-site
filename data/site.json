@@ -13,7 +13,7 @@
       "category": "Brand Identity",
       "summary": "Logo、品牌色、角色輪廓與應用視覺，建立柔軟且可延伸的品牌印象。",
       "image": "assets/pluffy-logo-horizontal.png",
-      "url": "work-pluffy-brand.html",
+      "url": "work-pluffy-brand",
       "featured": true
     },
     {
@@ -22,7 +22,7 @@
       "summary": "單張貼文、組圖貼文、活動公告與日常社群內容視覺。",
       "image": "assets/works/social-template/posts/single-post/巴哈ACG創作大賽.png",
       "imageClass": "social-cover",
-      "url": "work-social-template.html",
+      "url": "work-social-template",
       "featured": false
     },
     {
@@ -31,7 +31,7 @@
       "summary": "商品資訊、活動內容、電商上架與節慶公告模板，整理成可延伸的版型系統。",
       "image": "assets/works/social-template/post-templates/電商_D/新年公告_紅包展示圖_01.png",
       "imageClass": "social-cover",
-      "url": "work-social-templates.html",
+      "url": "work-social-templates",
       "featured": false
     },
     {
@@ -40,7 +40,7 @@
       "summary": "適用於品牌出貨、禮盒、攤位小卡與手作商品標籤。",
       "image": "assets/works/print-package/package-main/01_充電器-U220_模擬.png",
       "imageClass": "package-cover",
-      "url": "work-print-package.html",
+      "url": "work-print-package",
       "featured": false
     },
     {
@@ -49,7 +49,7 @@
       "summary": "中秋、春酒與活動企劃的主視覺延伸，包含公告、邀請函、背板與情境模擬。",
       "image": "assets/works/event-visual/mid-autumn/米可中秋節卡片模擬B.png",
       "imageClass": "event-cover",
-      "url": "event-visual.html",
+      "url": "event-visual",
       "featured": false
     },
     {
@@ -58,7 +58,7 @@
       "summary": "企劃提案、流程整理與專題報告頁面，將資訊轉成清楚可閱讀的簡報版面。",
       "image": "assets/works/PPT/04.png",
       "imageClass": "presentation-cover",
-      "url": "work-presentation.html",
+      "url": "work-presentation",
       "featured": false
     },
     {
@@ -67,7 +67,7 @@
       "summary": "招牌、帆布、立牌與店面宣傳物，協助品牌在實體空間被清楚看見。",
       "image": "assets/works/store-signage/signage/onsite/S__38510596_0.jpg",
       "imageClass": "store-cover",
-      "url": "work-store-signage.html",
+      "url": "work-store-signage",
       "featured": false
     },
     {
@@ -76,7 +76,7 @@
       "summary": "頭像、品牌角色、活動主視覺與客製插圖。",
       "image": "assets/works/illustration/LoveYou_有背景.png",
       "imageClass": "illustration-cover",
-      "url": "work-illustration.html",
+      "url": "work-illustration",
       "featured": false
     },
     {
@@ -85,7 +85,7 @@
       "summary": "上架圖、實體照、同人周邊與活動企劃紀錄，整理成可瀏覽的作品索引。",
       "image": "assets/works/photography/202306上架圖_貓咪.png",
       "imageClass": "photo-cover",
-      "url": "photography.html",
+      "url": "photography",
       "featured": false
     },
     {
@@ -94,7 +94,7 @@
       "summary": "產品建模、材質設定、場景光影與品牌視覺模擬。",
       "image": "assets/works/3d-render/render/B_01.png",
       "imageClass": "render-cover",
-      "url": "work-3d-render.html",
+      "url": "work-3d-render",
       "featured": false
     },
     {
@@ -103,7 +103,7 @@
       "summary": "短影音、活動紀錄與宣傳影片整理，作為品牌內容的延伸呈現。",
       "image": "https://img.youtube.com/vi/KuWLJl3KfGA/maxresdefault.jpg",
       "imageClass": "video-cover",
-      "url": "video.html",
+      "url": "video",
       "featured": false
     },
     {
@@ -112,7 +112,7 @@
       "summary": "保留過去的小遊戲與互動練習，看見角色、介面與體驗節奏。",
       "image": "assets/works/playground/遊戲A_瓦爾格Vagger/瓦爾格Vagger專刊_縮小.jpg",
       "imageClass": "interactive-cover",
-      "url": "playground.html",
+      "url": "playground",
       "featured": false
     }
   ],
