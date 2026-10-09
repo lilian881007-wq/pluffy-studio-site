@@ -8879,6 +8879,15 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   padding: clamp(16px, 2.4vw, 28px);
 }
 
+.work-card.featured .mascot-sample::after {
+  display: none;
+}
+
+.work-card.featured .mascot-sample {
+  justify-items: start;
+  padding-inline: 24px;
+}
+
 .work-card.featured .cms-image-media img,
 .work-card.featured .mascot-sample img {
   width: min(76%, 500px);
@@ -8898,19 +8907,6 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
   width: min(82%, 520px);
   max-height: 74%;
   transform: translateY(-6px);
-}
-
-.work-card.featured .work-info {
-  min-height: 230px;
-  flex: 0 0 auto;
-}
-
-.work-card.featured .work-info p {
-  flex: 0 0 auto;
-}
-
-.work-card.featured .work-info em {
-  margin-top: auto;
 }
 
 .social-cover {
@@ -11213,5 +11209,37 @@ main > .section-wrap:has(.pricing-grid.detail-pricing) {
     grid-auto-columns: minmax(230px, 82vw) !important;
     margin-right: -18px !important;
     padding-right: 18px !important;
+  }
+}
+
+/* Homepage work card alignment: keep the featured logo card on the same left rhythm as its text. */
+.work-card.featured .mascot-sample {
+  justify-items: start !important;
+  padding-inline: 24px !important;
+}
+
+.work-card.featured .mascot-sample::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (min-width: 901px) {
+  .work-card {
+    display: grid !important;
+    grid-template-rows: 330px minmax(225px, 1fr);
+  }
+
+  .work-card .work-media,
+  .work-card .portfolio-cover,
+  .work-card .cms-image-media,
+  .work-card .youtube-work-cover,
+  .work-card.featured .mascot-sample {
+    min-height: 0 !important;
+    height: 330px !important;
+    aspect-ratio: auto !important;
+  }
+
+  .work-card .work-info {
+    min-height: 225px !important;
   }
 }
