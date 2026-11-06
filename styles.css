@@ -37,13 +37,14 @@ body {
     linear-gradient(180deg, var(--cream-soft), var(--paper) 34%, #fffaf4);
   font-family: var(--font-main);
   line-height: 1.65;
-  overflow-x: hidden;
+  /* Clip horizontal overflow without creating a second vertical scroll container. */
+  overflow-x: clip;
 }
 
 html {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
